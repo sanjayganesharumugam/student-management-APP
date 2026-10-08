@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student Details - Student Management System</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-sms">
+  <div class="container-fluid page-container py-0">
+    <a class="navbar-brand" href="dashboard.html">Student Management System</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" data-page="dashboard" href="dashboard.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link active" data-page="students" href="students.html">Students</a></li>
+      </ul>
+      <span id="navUsername" class="me-3"></span>
+      <a href="#" id="logoutBtn" class="btn btn-outline-light btn-sm">Logout</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-container" style="max-width: 760px;">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="page-title mb-0">Student Details</h2>
+    <div class="d-flex gap-2">
+      <a href="#" id="editLink" class="btn btn-primary-sms">Edit</a>
+      <a href="students.html" class="btn btn-outline-secondary">Back to List</a>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="d-flex align-items-center mb-4">
+      <div class="avatar-circle" style="width:56px;height:56px;font-size:1.3rem;" id="avatarInitials"></div>
+      <div>
+        <h4 class="mb-0" id="studentName">—</h4>
+        <span class="text-muted">Student ID: <span id="studentId">—</span></span>
+      </div>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-md-6">
+        <div class="text-muted small">Email</div>
+        <div id="studentEmail">—</div>
+      </div>
+      <div class="col-md-6">
+        <div class="text-muted small">Phone</div>
+        <div id="studentPhone">—</div>
+      </div>
+      <div class="col-md-6">
+        <div class="text-muted small">Date of Birth</div>
+        <div id="studentDob">—</div>
+      </div>
+      <div class="col-md-6">
+        <div class="text-muted small">Gender</div>
+        <div id="studentGender">—</div>
+      </div>
+      <div class="col-md-6">
+        <div class="text-muted small">Department</div>
+        <div id="studentDepartment">—</div>
+      </div>
+      <div class="col-md-6">
+        <div class="text-muted small">Year of Study</div>
+        <div id="studentYear">—</div>
+      </div>
+      <div class="col-md-6">
+        <div class="text-muted small">CGPA</div>
+        <div id="studentCgpa">—</div>
+      </div>
+      <div class="col-md-6">
+        <div class="text-muted small">Address</div>
+        <div id="studentAddress">—</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/api.js"></script>
+<script src="js/common.js"></script>
+<script src="js/student-details.js"></script>
+</body>
+</html>

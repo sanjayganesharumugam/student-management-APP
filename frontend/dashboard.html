@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard - Student Management System</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-sms">
+  <div class="container-fluid page-container py-0">
+    <a class="navbar-brand" href="dashboard.html">Student Management System</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" data-page="dashboard" href="dashboard.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" data-page="students" href="students.html">Students</a></li>
+      </ul>
+      <span id="navUsername" class="me-3"></span>
+      <a href="#" id="logoutBtn" class="btn btn-outline-light btn-sm">Logout</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-container">
+  <h2 class="page-title">Dashboard</h2>
+
+  <div class="row g-3 mb-4">
+    <div class="col-6 col-lg-3">
+      <div class="stat-card d-flex justify-content-between align-items-start">
+        <div>
+          <div class="stat-label">Total Students</div>
+          <div class="stat-value" id="statTotalStudents">—</div>
+        </div>
+        <div class="stat-icon bg-icon-blue">👥</div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-3">
+      <div class="stat-card d-flex justify-content-between align-items-start">
+        <div>
+          <div class="stat-label">Departments</div>
+          <div class="stat-value" id="statTotalDepartments">—</div>
+        </div>
+        <div class="stat-icon bg-icon-purple">🏛</div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-3">
+      <div class="stat-card d-flex justify-content-between align-items-start">
+        <div>
+          <div class="stat-label">Average CGPA</div>
+          <div class="stat-value" id="statAvgCgpa">—</div>
+        </div>
+        <div class="stat-icon bg-icon-green">📊</div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-3">
+      <div class="stat-card d-flex justify-content-between align-items-start">
+        <div>
+          <div class="stat-label">Final-Year Students</div>
+          <div class="stat-value" id="statFinalYear">—</div>
+        </div>
+        <div class="stat-icon bg-icon-orange">🎓</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-3">
+    <div class="col-lg-6">
+      <div class="panel">
+        <h5 class="mb-3">Students per Department</h5>
+        <div id="departmentBreakdown"><p class="text-muted mb-0">Loading...</p></div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="panel">
+        <h5 class="mb-3">Quick Actions</h5>
+        <div class="d-grid gap-2">
+          <a href="add-student.html" class="btn btn-primary-sms">Add New Student</a>
+          <a href="students.html" class="btn btn-outline-secondary">View All Students</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/api.js"></script>
+<script src="js/common.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

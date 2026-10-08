@@ -1,0 +1,194 @@
+:root {
+  --primary: #2f5fd7;
+  --primary-dark: #24469e;
+  --success: #1a9c5c;
+  --danger: #d63b3b;
+  --bg: #f4f6fb;
+  --card-bg: #ffffff;
+  --text: #22293b;
+  --muted: #6b7280;
+  --border: #e3e7f0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* ---------- Navbar ---------- */
+.navbar-sms {
+  background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+}
+.navbar-sms .navbar-brand,
+.navbar-sms .nav-link,
+.navbar-sms #navUsername {
+  color: #fff !important;
+  font-weight: 500;
+}
+.navbar-sms .nav-link.active {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* ---------- Auth (login) page ---------- */
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+}
+.auth-card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 20px 45px rgba(20, 30, 60, 0.25);
+}
+.auth-card h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: .25rem;
+}
+.auth-card p.subtitle {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+/* ---------- Page container ---------- */
+.page-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.75rem 1rem 3rem;
+}
+
+.page-title {
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+/* ---------- Stat cards ---------- */
+.stat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  height: 100%;
+}
+.stat-card .stat-label {
+  color: var(--muted);
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.stat-card .stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: .25rem;
+}
+.stat-card .stat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: #fff;
+}
+.bg-icon-blue { background: var(--primary); }
+.bg-icon-green { background: var(--success); }
+.bg-icon-purple { background: #7c4fd6; }
+.bg-icon-orange { background: #e08a2b; }
+
+/* ---------- Cards / panels ---------- */
+.panel {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+}
+
+/* ---------- Table ---------- */
+.table-sms thead th {
+  background: #eef1f9;
+  font-size: .82rem;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  color: var(--muted);
+  border-bottom: none;
+  white-space: nowrap;
+}
+.table-sms td {
+  vertical-align: middle;
+}
+.table-sms tbody tr:hover {
+  background: #f8f9fd;
+}
+
+.avatar-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: .85rem;
+  margin-right: .5rem;
+}
+
+.cgpa-badge {
+  font-weight: 600;
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary-sms {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+.btn-primary-sms:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: #fff;
+}
+
+/* ---------- Alerts ---------- */
+#alertBox {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2000;
+  min-width: 280px;
+  max-width: 90vw;
+}
+
+/* ---------- Forms ---------- */
+.form-label {
+  font-weight: 500;
+  font-size: .9rem;
+}
+.required::after {
+  content: " *";
+  color: var(--danger);
+}
+
+/* ---------- Loading spinner ---------- */
+.loading-row td {
+  text-align: center;
+  padding: 2rem 0;
+  color: var(--muted);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 576px) {
+  .stat-value { font-size: 1.5rem; }
+  .page-container { padding: 1rem .75rem 2rem; }
+}

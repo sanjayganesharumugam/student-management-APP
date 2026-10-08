@@ -1,0 +1,112 @@
+{
+  "info": {
+    "name": "Student Management System",
+    "description": "REST API collection for the Student Management System (Spring Boot + Oracle). Run 'Login' first - Postman stores the session cookie automatically for the rest of the requests.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080" }
+  ],
+  "item": [
+    {
+      "name": "1. Login",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"Admin@123\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/auth/login", "host": ["{{baseUrl}}"], "path": ["api", "auth", "login"] }
+      }
+    },
+    {
+      "name": "2. Get All Students",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/students", "host": ["{{baseUrl}}"], "path": ["api", "students"] }
+      }
+    },
+    {
+      "name": "3. Get Student By ID",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/students/1", "host": ["{{baseUrl}}"], "path": ["api", "students", "1"] }
+      }
+    },
+    {
+      "name": "4. Create Student",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Ravi\",\n  \"lastName\": \"Kumar\",\n  \"email\": \"ravi.kumar@example.com\",\n  \"phone\": \"9876500000\",\n  \"dateOfBirth\": \"2004-05-20\",\n  \"gender\": \"Male\",\n  \"departmentId\": 1,\n  \"yearOfStudy\": 2,\n  \"cgpa\": 8.20,\n  \"address\": \"1 New Street\",\n  \"city\": \"Chennai\",\n  \"state\": \"Tamil Nadu\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/students", "host": ["{{baseUrl}}"], "path": ["api", "students"] }
+      }
+    },
+    {
+      "name": "5. Update Student",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Ravi\",\n  \"lastName\": \"Kumar\",\n  \"email\": \"ravi.kumar@example.com\",\n  \"phone\": \"9876500000\",\n  \"dateOfBirth\": \"2004-05-20\",\n  \"gender\": \"Male\",\n  \"departmentId\": 1,\n  \"yearOfStudy\": 3,\n  \"cgpa\": 8.60,\n  \"address\": \"1 New Street\",\n  \"city\": \"Chennai\",\n  \"state\": \"Tamil Nadu\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/students/1", "host": ["{{baseUrl}}"], "path": ["api", "students", "1"] }
+      }
+    },
+    {
+      "name": "6. Delete Student",
+      "request": {
+        "method": "DELETE",
+        "url": { "raw": "{{baseUrl}}/api/students/1", "host": ["{{baseUrl}}"], "path": ["api", "students", "1"] }
+      }
+    },
+    {
+      "name": "7. Search Students",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/students/search?keyword=arun",
+          "host": ["{{baseUrl}}"], "path": ["api", "students", "search"],
+          "query": [{ "key": "keyword", "value": "arun" }]
+        }
+      }
+    },
+    {
+      "name": "8. Filter Students",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/students/filter?department=1&year=3",
+          "host": ["{{baseUrl}}"], "path": ["api", "students", "filter"],
+          "query": [{ "key": "department", "value": "1" }, { "key": "year", "value": "3" }]
+        }
+      }
+    },
+    {
+      "name": "9. Dashboard Stats",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/dashboard/stats", "host": ["{{baseUrl}}"], "path": ["api", "dashboard", "stats"] }
+      }
+    },
+    {
+      "name": "10. Get Departments",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/departments", "host": ["{{baseUrl}}"], "path": ["api", "departments"] }
+      }
+    },
+    {
+      "name": "11. Logout",
+      "request": {
+        "method": "POST",
+        "url": { "raw": "{{baseUrl}}/api/auth/logout", "host": ["{{baseUrl}}"], "path": ["api", "auth", "logout"] }
+      }
+    }
+  ]
+}

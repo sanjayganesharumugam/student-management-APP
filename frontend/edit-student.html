@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edit Student - Student Management System</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-sms">
+  <div class="container-fluid page-container py-0">
+    <a class="navbar-brand" href="dashboard.html">Student Management System</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" data-page="dashboard" href="dashboard.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link active" data-page="students" href="students.html">Students</a></li>
+      </ul>
+      <span id="navUsername" class="me-3"></span>
+      <a href="#" id="logoutBtn" class="btn btn-outline-light btn-sm">Logout</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-container" style="max-width: 820px;">
+  <h2 class="page-title">Edit Student</h2>
+
+  <div class="panel">
+    <form id="studentForm" novalidate>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label required">First Name</label>
+          <input type="text" class="form-control" name="firstName" id="firstName" required maxlength="50">
+          <div class="invalid-feedback">First name is required.</div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label required">Last Name</label>
+          <input type="text" class="form-control" name="lastName" id="lastName" required maxlength="50">
+          <div class="invalid-feedback">Last name is required.</div>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label required">Email</label>
+          <input type="email" class="form-control" name="email" id="email" required maxlength="100">
+          <div class="invalid-feedback">Enter a valid email address.</div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label required">Phone</label>
+          <input type="tel" class="form-control" name="phone" id="phone" required pattern="[6-9][0-9]{9}" maxlength="10">
+          <div class="invalid-feedback">Enter a valid 10-digit Indian mobile number.</div>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Date of Birth</label>
+          <input type="date" class="form-control" name="dateOfBirth" id="dateOfBirth">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Gender</label>
+          <select class="form-select" name="gender" id="gender">
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label required">Department</label>
+          <select class="form-select" name="departmentId" id="departmentId" required>
+            <option value="">Select Department</option>
+          </select>
+          <div class="invalid-feedback">Department is required.</div>
+        </div>
+        <div class="col-md-3">
+          <label class="form-label required">Year</label>
+          <select class="form-select" name="yearOfStudy" id="yearOfStudy" required>
+            <option value="">Year</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <div class="invalid-feedback">Year must be between 1 and 4.</div>
+        </div>
+        <div class="col-md-3">
+          <label class="form-label required">CGPA</label>
+          <input type="number" class="form-control" name="cgpa" id="cgpa" required min="0" max="10" step="0.01">
+          <div class="invalid-feedback">CGPA must be between 0 and 10.</div>
+        </div>
+
+        <div class="col-12">
+          <label class="form-label">Address</label>
+          <input type="text" class="form-control" name="address" id="address" maxlength="255">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">City</label>
+          <input type="text" class="form-control" name="city" id="city" maxlength="50">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">State</label>
+          <input type="text" class="form-control" name="state" id="state" maxlength="50">
+        </div>
+      </div>
+
+      <div class="d-flex gap-2 mt-4">
+        <button type="submit" class="btn btn-primary-sms">Save Changes</button>
+        <a href="students.html" class="btn btn-outline-secondary">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/api.js"></script>
+<script src="js/common.js"></script>
+<script src="js/edit-student.js"></script>
+</body>
+</html>
